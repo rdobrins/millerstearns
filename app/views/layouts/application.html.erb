@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Millerstearns</title>
+  <link rel="shortcut icon" type="image/x-icon" href="/millerstearns_tn.jpg" />
+  <title>Miller Stearns</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<% if admin_signed_in? %>
+  <%= link_to 'Sign Out', destroy_admin_session_path, method: :delete %>
+  <%= link_to 'Edit Info', edit_admin_registration_path%>
+<% else %>
+  <%= link_to 'Sign In', new_admin_session_path %>
+<% end %>
 
 <%- flash.each do |key, value| -%>
   <div class="flash flash-<%= key %>">
