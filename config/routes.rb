@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :admins
+  devise_for :admin, path_names: {
+  sign_up: ''
+}
 
   root 'landing#home'
   # The priority is based upon order of creation: first created -> highest priority.
