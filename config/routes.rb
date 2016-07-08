@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   root 'landing#home'
 
   get '/about' => 'landing#about'
+  get '/contact' => 'landing#contact'
+  get '/gallery' => 'landing#gallery'
 
   resources :landing
 

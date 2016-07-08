@@ -10,14 +10,47 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require foundation_and_overrides
  *= require_tree .
  *= require_self
  */
 
+.overFlowHide {
+  overflow: hidden;
+}
+
 .header {
+  color: #000;
   width: 100%;
-  height: 10em;
-  background-color: blue;
+  height: 15em;
+  background-color: #FFF;
+}
+
+.breaker {
+  height: 1em;
+}
+
+.navBar {
+  width: 110%;
+  background-color: #FFF;
+  height: 3em;
+  margin-left: -1em;
+  border-top: .15em solid #9FA8A3;
+  border-bottom: .15em solid #9FA8A3;
+  overflow: hidden;
+}
+
+.navPiece {
+  color: #000;
+  font-size: 1.25em;
+  padding-top: .3em;
+  width: 30.6%;
+  display: inline-block;
+  height: 3em;
+}
+
+.navPiece:hover {
+  color: #9FA8A3;
 }
 
 .hidden {
@@ -28,9 +61,21 @@
   padding: 1em;
 }
 
+#frontHeaderLogo {
+  width: 10em;
+}
+
+.inline {
+  display: inline-block;
+}
+
 .book {
  width: 15em;
  height: 7em;
  border-radius: 1em;
  border: 1em solid #FF606E;
+}
+
+.googlefont1 {
+  font-family: 'Playfair Display SC', serif;
 }

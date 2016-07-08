@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     if @message.save
       flash[:notice] = "Message Successfully Sent."
+      MessageMailer.new_message(@message).deliver_later
     else
       flash[:errors] = @message.errors.full_messages.join(". ")
     end

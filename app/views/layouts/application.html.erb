@@ -1,33 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="shortcut icon" type="image/x-icon" href="/millerstearns_tn.jpg" />
+  <link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC' rel='stylesheet' type='text/css' />
+
   <title>Miller Stearns Design</title>
+
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="overFlowHide">
+    <a href="/">
+    <div class="breaker"></div>
+    <div class="breaker"></div>
+    <div class="row header">
+      <div class="small-12 small-centered columns text-center">
+        <img class="text-center padding" id="frontHeaderLogo" src="/millerstearnslogo.jpg"/>
+        <h1 class="googlefont1">Miller&nbsp; Stearns&nbsp; Design</h1>
+      </div>
+    </div>
+    </a>
+    <div class="row googlefont1">
+      <div class="navBar">
+        <a href="/about">
+          <div class="navPiece text-center">
+            <p>About<p>
+          </div>
+        </a>
+        <a href="/gallery">
+          <div class="navPiece text-center">
+            <p>Gallery<p>
+          </div>
+        </a>
+        <a href="/contact">
+          <div class="navPiece text-center">
+            <p>Contact<p>
+          </div>
+        </a>
+      </div>
+    </div>
 
-<div class="header">
+    <%- flash.each do |key, value| -%>
+      <div class="flash flash-<%= key %>">
+        <%= value %>
+      </div>
+    <%- end -%>
 
+    <br />
 
-</div>
+    <%= yield %>
 
-<% if admin_signed_in? %>
-  <%= link_to 'Sign Out', destroy_admin_session_path, method: :delete %>
-  <%= link_to 'Edit Info', edit_admin_registration_path%>
-<% else %>
-  <%= link_to 'Sign In', new_admin_session_path %>
-<% end %>
-
-<%- flash.each do |key, value| -%>
-  <div class="flash flash-<%= key %>">
-    <%= value %>
+    <% if admin_signed_in? %>
+      <%= link_to 'Sign Out', destroy_admin_session_path, method: :delete %>
+      <%= link_to 'Edit Admin Info', edit_admin_registration_path%>
+    <% else %>
+      <%= link_to 'Admin', new_admin_session_path %>
+    <% end %>
   </div>
-<%- end -%>
-
-<%= yield %>
-
 </body>
 </html>
