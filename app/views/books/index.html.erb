@@ -1,0 +1,49 @@
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<% if admin_signed_in? %>
+
+  <h1>Content here</h1>
+
+  <section id="books-section">
+    <h2>Books:</h2>
+    <ol id="books">
+      <%= render @books %>
+    </ol>
+  </section>
+
+  <br />
+
+  <p>
+    <%= link_to "Create a New Book", '#', :class => "toggler_book" %>
+  </p>
+
+  <section class="togglee_book hidden">
+    <div class="form-inputs">
+    <%= form_for [@book], remote: true do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+        </br>
+      <%= f.label :summary, 'Summary' %>
+      <%= f.text_area :summary, size: "5x5" %>
+        </br>
+      <%= f.label :avatar, 'Header Image' %>
+      <%= f.file_field :avatar %>
+        </br>
+      <%= f.submit "Create Book" %>
+    <% end %>
+    </div>
+  </section>
+
+  <section id="pages-section">
+    <ol id="pages">
+      <%= render @messages %>
+    </ol>
+  </section>
+
+  <h3><%= link_to "Home", root_path %></h3>
+
+<% else %>
+
+  <h3><%= link_to "Home", root_path %></h3>
+
+<% end %>

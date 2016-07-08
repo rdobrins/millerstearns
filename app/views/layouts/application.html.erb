@@ -2,12 +2,17 @@
 <html>
 <head>
   <link rel="shortcut icon" type="image/x-icon" href="/millerstearns_tn.jpg" />
-  <title>Miller Stearns</title>
+  <title>Miller Stearns Design</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<div class="header">
+
+
+</div>
 
 <% if admin_signed_in? %>
   <%= link_to 'Sign Out', destroy_admin_session_path, method: :delete %>

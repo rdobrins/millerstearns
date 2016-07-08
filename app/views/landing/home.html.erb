@@ -1,1 +1,33 @@
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
 <h1>Landing Page</h1>
+
+<ul>
+  <li><%= link_to "About", about_path %></li>
+  <li><%= link_to "Gallery", landing_index_path %></li>
+</ul>
+
+<% if admin_signed_in? %>
+<h1><%= link_to "Admin area", books_path %></h1>
+<% end %>
+
+<p>
+<%= link_to "Send a message", '#', :class => "toggler_message" %>
+</p>
+
+<section class="togglee_message hidden">
+  <div class="form-inputs">
+  <%= form_for [@message], remote: true do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+      </br>
+    <%= f.label :contact %>
+    <%= f.text_field :contact %>
+      </br>
+    <%= f.label :body, 'Message' %>
+    <%= f.text_area :body, size: "5x5" %>
+      </br>
+    <%= f.submit "Send Message" %>
+  <% end %>
+  </div>
+</section>

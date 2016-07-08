@@ -1,0 +1,9 @@
+<li class="padding">
+  <div class="book">
+    <a href="/books/<%= book.id %>" style="text-decoration: none;">
+      <h3><%= book.name %></h3>
+      <%= button_to "Edit Book", edit_book_path(book), :method => "get" %>
+      <%= button_to "Delete Book", book_path(book), data: {confirm: "Delete this book?"}, method: :delete %>
+    </a>
+  </div>
+</li>

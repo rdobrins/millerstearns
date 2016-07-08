@@ -1,0 +1,7 @@
+<li class="padding">
+  <div class="message">
+    <h3><%= message.name %></h3>
+    <p><%= message.body %></p>
+    <%= button_to "Delete Message", message_path(message), data: {confirm: "Delete this message?"}, method: :delete %>
+  </div>
+</li>

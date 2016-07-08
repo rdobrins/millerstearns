@@ -1,0 +1,7 @@
+<li class="padding">
+  <div class="page">
+    <h3><%= page.name %></h3>
+    <img src="<%= page.avatar.url %>"/>
+    <%= button_to "Delete Page", book_page_path(@book, page), data: {confirm: "Delete this page?"}, method: :delete %>
+  </div>
+</li>
