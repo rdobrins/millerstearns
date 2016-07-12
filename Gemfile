@@ -9,7 +9,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'foundation-rails'
-gem 'devise'
+gem 'devise', '3.5.5'
 gem 'dotenv-rails'
 gem 'simple_form'
 gem 'carrierwave'

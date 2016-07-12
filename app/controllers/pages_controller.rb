@@ -7,7 +7,7 @@ class PagesController < ApplicationController
     @page.book = @book
 
     if @page.save
-      flash[:notice] = "Page added successfully"
+      flash[:notice] = "page added successfully."
       redirect_to book_path(@book)
     else
       flash[:errors] = @page.errors.full_messages.join(". ")
@@ -18,7 +18,7 @@ class PagesController < ApplicationController
   def destroy
     @book = Book.find(params[:book_id])
     Page.find(params[:id]).destroy
-    flash[:notice] = "Page Removed"
+    flash[:notice] = "page removed."
     redirect_to book_path(@book)
   end
 

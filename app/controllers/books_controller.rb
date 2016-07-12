@@ -17,7 +17,7 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
-      flash[:notice] = "Book added successfully"
+      flash[:notice] = "book added successfully."
       redirect_to books_path
     else
       flash[:errors] = @book.errors.full_messages.join(". ")
@@ -32,7 +32,7 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     if @book.update(book_params)
-      flash[:notice] = "Book updated successfully"
+      flash[:notice] = "book updated successfully."
       redirect_to books_path
     else
       flash[:errors] = @book.errors.full_messages.join(". ")

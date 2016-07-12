@@ -46,14 +46,16 @@
     </div>
 
     <%- flash.each do |key, value| -%>
-      <div class="flash flash-<%= key %>">
-        <%= value %>
+      <div class="text-center flash flash-<%= key %>">
+        <h4><%= value %></h4>
       </div>
     <%- end -%>
 
     <br />
 
     <%= yield %>
+
+    <h3><%= link_to "Home", root_path %></h3>
 
     <% if admin_signed_in? %>
       <%= link_to 'Sign Out', destroy_admin_session_path, method: :delete %>

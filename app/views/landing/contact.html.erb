@@ -1,10 +1,10 @@
-<h1>Contact page here</h1>
+<h1 class="text-center padding">Contact page here</h1>
 
-<p>
+<p class="text-center padding">
 <%= link_to "Send a message", '#', :class => "toggler_message" %>
 </p>
 
-<section class="togglee_message hidden">
+<section class="text-center side-padding togglee_message hidden">
   <div class="form-inputs">
   <%= form_for [@message], remote: true do |f| %>
     <%= f.label :name %>
@@ -15,7 +15,7 @@
       </br>
     <%= f.label :body, 'Message' %>
     <%= f.text_area :body, size: "5x5" %>
-      </br>
+    <p style="color: #9FA8A3;">All fields required.</p>
     <%= f.submit "Send Message" %>
   <% end %>
   </div>

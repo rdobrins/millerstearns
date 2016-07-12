@@ -4,10 +4,10 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     if @message.save
-      flash[:notice] = "Message Successfully Sent."
-      MessageMailer.new_message(@message).deliver_later
+      MessageMailer.new_message(@message).deliver_now
+      flash[:notice] = "message sent."
     else
-      flash[:errors] = @message.errors.full_messages.join(". ")
+      flash[:notice] = "fields cannot be left blank."
     end
     respond_to do |format|
       format.js {render inline: "location.reload();" }
@@ -16,7 +16,7 @@ class MessagesController < ApplicationController
 
   def destroy
     Message.find(params[:id]).destroy
-    flash[:notice] = "Message Deleted"
+    flash[:notice] = "message deleted."
     redirect_to books_path
   end
 
