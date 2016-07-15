@@ -1,24 +1,20 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class="row">
+  <br/><br/><br/>
+  <div class="small-12 columns small-centered text-center">
+    <div class="small-9 medium-6 columns small-centered text-center">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.label :email, class: 'text-left' %>
+        <%= f.email_field :email, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= f.label :password, class: 'text-left' %>
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Log in", class: 'googlefont1 submit-button' %>
+      </div>
+    <% end %>
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
+</div>

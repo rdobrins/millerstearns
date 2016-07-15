@@ -2,12 +2,15 @@
 
 <% if admin_signed_in? %>
 
-<h1><%= @book.name %></h1>
+<div class="side-padding">
+  <h1><%= @book.name %></h1>
+  <img class="admin-book-display" src="<%= @book.avatar.url %>"/>
+</div>
 
 </br>
 
 <section id="pages-section">
-  <ol id="pages">
+  <ol id="pages" class="side-padding">
     <%= render @pages %>
   </ol>
 </section>

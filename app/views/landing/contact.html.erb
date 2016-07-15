@@ -1,22 +1,27 @@
-<h1 class="text-center padding">Contact page here</h1>
-
-<p class="text-center padding">
-<%= link_to "Send a message", '#', :class => "toggler_message" %>
-</p>
-
-<section class="text-center side-padding togglee_message hidden">
-  <div class="form-inputs">
-  <%= form_for [@message], remote: true do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-      </br>
-    <%= f.label :contact %>
-    <%= f.text_field :contact %>
-      </br>
-    <%= f.label :body, 'Message' %>
-    <%= f.text_area :body, size: "5x5" %>
-    <p style="color: #9FA8A3;">All fields required.</p>
-    <%= f.submit "Send Message" %>
-  <% end %>
-  </div>
-</section>
+<div class="row medium-12 columns small-centered contact-container">
+  <section class="pad-top small-12 medium-6 columns text-center">
+    <h3 class="pad-top googlefont1">Patrice Miller</h3>
+    <br/>
+    <h6>508 922 3460</h6>
+    <h6>PatriceAMiller4@Gmail.com</h6>
+    <h3 class="pad-top googlefont1">Leslie Stearns</h3>
+    <br/>
+    <h6>508 954 0588</h6>
+    <h6>LeslieStearns@Comcast.net</h6>
+  </section>
+  <section class="pad-top small-12 medium-6 columns text-center">
+    <div class="small-10 small-centered">
+    <h4 class="googlefont1 pad-top">Send Us a Message</h4>
+    <%= form_for [@message], remote: true do |f| %>
+      <%= f.label :name, class: 'text-left googlefont1' %>
+      <%= f.text_field :name %>
+      <%= f.label :contact, 'Contact Information', class: 'text-left googlefont1' %>
+      <%= f.text_field :contact %>
+      <%= f.label :body, 'Message', class: 'text-left googlefont1' %>
+      <%= f.text_area :body, size: "5x5" %>
+      <p class="googlefont1">all fields required *</p>
+      <%= f.submit "Send Message", class: 'googlefont1 submit-button' %>
+    <% end %>
+    </div>
+  </section>
+</div>

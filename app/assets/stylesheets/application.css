@@ -15,17 +15,44 @@
  *= require_self
  */
 
+.footerAdmin {
+   font-weight: normal;
+   color: #9FA8A3;
+   font-size: .7em;
+ }
+
+ .footerLinks {
+   color: #9FA8A3;
+   font-size: .7em;
+ }
+
+ .footerLinks:hover {
+    color: #000;
+    opacity: .6;
+  }
+
+.submit-button {
+  background-color: #9FA8A3;
+  width: 10em;
+  height: 2.5em;
+  color: #FFF;
+  font-weight: bold;
+}
+
 .overFlowHide {
   overflow: hidden;
 }
 
+.contact-container {
+}
+
 .form-inputs {
-  width: 30em;
+  width: 20em;
 }
 
 .header {
-  color: #000;
   width: 100%;
+  color: #000;
   height: 15em;
   background-color: #FFF;
 }
@@ -35,20 +62,33 @@
 }
 
 .navBar {
-  width: 110%;
+  width: 100%;
   background-color: #FFF;
   height: 3em;
-  margin-left: -1em;
   border-top: .15em solid #9FA8A3;
   border-bottom: .15em solid #9FA8A3;
+}
+
+.footerBar {
+  position:absolute;
+  width: 100%;
+  background-color: #FFF;
+  height: 6em;
   overflow: hidden;
+  border-top: .1em solid #000;
+}
+
+.footerPiece {
+  color: #9FA8A3;
+  display: inline-block;
+  height: 100%;
+  font-size: .9em;
 }
 
 .navPiece {
   color: #000;
   font-size: 1.25em;
   padding-top: .3em;
-  width: 30.6%;
   display: inline-block;
   height: 3em;
 }
@@ -62,8 +102,7 @@
 }
 
 .flash {
-  padding-top: 1em;
-  width: 100%;
+  padding-top: .5em;
   height: 3em;
   color: #9FA8A3;
 }
@@ -72,17 +111,29 @@
   padding: 1em;
 }
 
+.pad-top {
+  padding-top: 1.5em;
+}
+
 .side-padding {
-  padding-left: 5em;
-  padding-right: 5em;
+  padding-left: 3em;
+  padding-right: 3em;
 }
 
 #frontHeaderLogo {
   width: 10em;
 }
 
+#footerLogo {
+  width: 3em;
+}
+
 .inline {
   display: inline-block;
+}
+
+.black {
+  color: #000;
 }
 
 .book {
@@ -94,4 +145,33 @@
 
 .googlefont1 {
   font-family: 'Playfair Display SC', serif;
+}
+
+@media (max-width: 820px) {
+    .footerContact {
+        display: none;
+    }
+}
+
+@media (min-width: 820px) {
+    .footerLinks {
+        display: none;
+    }
+}
+
+.footerContact {
+  font-family: sans-serif;
+  font-size: .65em;
+}
+
+.message {
+  width: 25em;
+}
+
+.admin-page-display {
+  width: 5em;
+}
+
+.admin-book-display {
+  width: 7em;
 }
