@@ -1,7 +1,9 @@
 <li class="padding">
-  <div class="message">
-    <h5><%= message.name %></h5>
+  <div>
+    <%= message.name %><br/>
+    <%= message.created_at.strftime("%I:%M%p on %m/%d/%Y") %><br/>
+    <%= message.contact %><br/>
     <%= message.body %>
-    <%= button_to "Delete Message", message_path(message), data: {confirm: "Delete this message?"}, method: :delete, class: "submit-button" %>
+    <%= button_to "Delete Message", message_path(message), data: {confirm: "Delete this message?"}, method: :delete %>
   </div>
 </li>

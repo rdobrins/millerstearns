@@ -15,6 +15,8 @@ gem 'simple_form'
 gem 'carrierwave'
 gem 'fog'
 gem 'kaminari'
+gem 'font-awesome-sass'
+gem 'jquery-slick-rails'
 
 group :development, :test do
   gem 'pry-rails'

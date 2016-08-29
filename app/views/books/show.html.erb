@@ -1,9 +1,15 @@
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
+<div class="row">
+
+<div class="padding">
+
 <% if admin_signed_in? %>
 
-<div class="side-padding">
-  <h1><%= @book.name %></h1>
+<br/>
+
+<div class="pad-top side-padding">
+  <h2><%= @book.name %></h2>
   <img class="admin-book-display" src="<%= @book.avatar.url %>"/>
 </div>
 
@@ -26,7 +32,6 @@
     <%= form_for [@book, @page], remote: true do |f| %>
       <%= f.label :name %>
       <%= f.text_field :name %>
-        </br>
       <%= f.label :avatar, 'Image' %>
       <%= f.file_field :avatar %>
         </br>
@@ -37,6 +42,10 @@
 </section>
 
 </br>
-<h3><%= link_to "Gallery Index", books_path %></h3>
+<h4><%= link_to "Back to Admin Page", books_path %></h4>
 
 <% end %>
+
+</div>
+
+</div>

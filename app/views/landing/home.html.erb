@@ -2,4 +2,13 @@
 
 <div class="text-center" style="height:30em;">
   <h1 class="pad-top">The Home Page.</h1>
+
+  <div class="row small-12 small-centered columns">
+    <div class="autoplay">
+      <% @books.each do |book| %>
+      <div><img src="<%= book.avatar.url %>"/></div>
+      <% end %>
+    </div>
+  </div>
+
 </div>

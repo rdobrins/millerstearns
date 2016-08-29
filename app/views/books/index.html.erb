@@ -1,43 +1,56 @@
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
+<div class="row">
+
 <% if admin_signed_in? %>
 
-  <h1>Content here</h1>
+<div class="padding small-12 columns">
 
-  <section id="books-section">
-    <h2>Books:</h2>
-    <ol id="books">
+  <div class="small-10 small-centered">
+
+  <h3>Galleries:</h3>
+
+  <section>
+    <ol>
       <%= render @books %>
     </ol>
   </section>
 
-  <br />
-
   <p>
-    <%= link_to "Create a New Book", '#', :class => "toggler_book" %>
+    <%= link_to "Create a New Gallery", '#', :class => "toggler_book" %>
   </p>
 
   <section class="togglee_book hidden">
     <div class="form-inputs">
     <%= form_for [@book], remote: true do |f| %>
-      <%= f.label :name %>
+      <%= f.label :name, 'Title' %>
       <%= f.text_field :name %>
         </br>
       <%= f.label :summary, 'Summary' %>
       <%= f.text_area :summary, size: "5x5" %>
         </br>
-      <%= f.label :avatar, 'Header Image' %>
+      <%= f.label :avatar, 'Cover Image' %>
       <%= f.file_field :avatar %>
         </br>
-      <%= f.submit "Create Book" %>
+      <%= f.submit "Create Gallery" %>
     <% end %>
     </div>
   </section>
 
-  <section id="messages-section">
-    <ol id="messages" class="side-padding">
+  <br/><br/>
+
+  <h3>Messages:</h3>
+
+  <section>
+    <ol>
       <%= render @messages %>
     </ol>
   </section>
 
+  </div>
+
+</div>
+
 <% end %>
+
+</div>

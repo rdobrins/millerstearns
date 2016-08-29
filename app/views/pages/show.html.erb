@@ -1,0 +1,45 @@
+<div class="row small-12 columns small-centered text-center">
+
+  <div class="small-10 columns small-centered text-center">
+
+    <br/><br/>
+
+    <div class="padding">
+
+      <% if @previousPage %>
+        <a class="googlefont1 direction-link side-padding" href="/books/<%= @book.id %>/pages/<%= @previousPage.id %>">previous</a>
+      <% end %>
+
+      <% if @nextPage %>
+        <a class="googlefont1 direction-link side-padding" href="/books/<%= @book.id %>/pages/<%= @nextPage.id %>">next</a>
+      <% end %>
+
+    </div>
+
+    <i class="fa fa-camera-retro fa-5x"></i> fa-camera-retro
+
+    <h5 class="googlefont1"><%= @page.name %></h5>
+
+    <br/><br/>
+
+    <img id="scroll-target" class="individual-image-display" src="<%= @page.avatar.url %>"/>
+
+    <br/><br/>
+
+    <h5 class="googlefont1"><%= @page.name %></h5>
+
+    <div class="padding">
+
+      <% if @previousPage %>
+        <a class="googlefont1 direction-link side-padding" href="/books/<%= @book.id %>/pages/<%= @previousPage.id %>">previous</a>
+      <% end %>
+
+      <% if @nextPage %>
+        <a class="googlefont1 direction-link side-padding" href="/books/<%= @book.id %>/pages/<%= @nextPage.id %>">next</a>
+      <% end %>
+
+    </div>
+
+  </div>
+
+</div>

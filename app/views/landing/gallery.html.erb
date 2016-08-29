@@ -1,3 +1,31 @@
-<div class="text-center" style="height:30em;">
-  <h1 class="pad-top">The Gallery Page.</h1>
+<div class="row text-center gallery-container small-12 columns">
+
+  <% if @books.length > 0 %>
+
+    <% @books.each do |book| %>
+
+      <br/><br/>
+
+      <h2 class="book-title"><%= book.name %></h2>
+
+      <br/>
+
+      <% book.pages.each do |page| %>
+
+        <div class="small-12 medium-6 large-4 columns">
+
+          <a href="/books/<%= book.id %>/pages/<%= page.id %>"><img class="gallery-page-display pad-bot" src="<%= page.avatar.url %>"/></a>
+
+        </div>
+
+      <% end %>
+
+    <% end %>
+
+  <% else %>
+
+    <h1 class="googlefont1">Images Coming Soon.</h1>
+
+  <% end %>
+
 </div>

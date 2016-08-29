@@ -137,10 +137,6 @@
 }
 
 .book {
- width: 15em;
- height: 7em;
- border-radius: 1em;
- border: 1em solid #FF606E;
 }
 
 .googlefont1 {
@@ -172,6 +168,43 @@
   width: 5em;
 }
 
+.gallery-page-display {
+  max-width: 15em;
+  max-height: 30em;
+}
+
+.individual-image-display {
+
+}
+
 .admin-book-display {
   width: 7em;
+}
+
+.gallery-container {
+  padding-top: 5em;
+  padding-bottom: 5em;
+  min-height: 30em;
+}
+
+.pad-bot {
+  padding-bottom: 4em;
+}
+
+.gray {
+  color: #9FA8A3;
+}
+
+.direction-link {
+  font-weight: bold;
+  color: #000;
+  padding: 1em;
+}
+
+.direction-link:hover {
+  color: #9FA8A3;
+}
+
+.book-title {
+
 }

@@ -14,4 +14,13 @@ $(document).ready(function(){
       $(".togglee_message").fadeToggle();
       $("#message_name").focus();
   });
+  $("direction-link").click(function(){
+    $("#top-title").focus();
+  });
+  $(function(){
+    $('html, body').animate({
+        scrollTop: $('#scroll-target').offset().top
+    }, 1500);
+    return false;
+  });
 });

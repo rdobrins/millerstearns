@@ -7,6 +7,7 @@ class LandingController < ApplicationController
 
   def home
     @admin = current_admin
+    @books = Book.all
   end
 
   def contact
