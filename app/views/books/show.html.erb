@@ -2,7 +2,9 @@
 
 <div class="row">
 
-<div class="padding">
+<div class="small-12 columns padding">
+
+<div class="small-10 small-centered medium-7">
 
 <% if admin_signed_in? %>
 
@@ -28,7 +30,7 @@
 </p>
 
 <section class="togglee_page hidden">
-  <div class="form-inputs">
+  <div class="small-12 small-centered">
     <%= form_for [@book, @page], remote: true do |f| %>
       <%= f.label :name %>
       <%= f.text_field :name %>
@@ -45,6 +47,8 @@
 <h4><%= link_to "Back to Admin Page", books_path %></h4>
 
 <% end %>
+
+</div>
 
 </div>
 

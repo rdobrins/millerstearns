@@ -1,12 +1,12 @@
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
-<div class="row">
+<div class="row" style="min-height: 30em">
 
 <% if admin_signed_in? %>
 
 <div class="padding small-12 columns">
 
-  <div class="small-10 small-centered">
+  <div class="small-10 medium-7 small-centered">
 
   <h3>Galleries:</h3>
 
@@ -21,7 +21,7 @@
   </p>
 
   <section class="togglee_book hidden">
-    <div class="form-inputs">
+    <div class="small-12 small-centered">
     <%= form_for [@book], remote: true do |f| %>
       <%= f.label :name, 'Title' %>
       <%= f.text_field :name %>
@@ -50,6 +50,10 @@
   </div>
 
 </div>
+
+<% else %>
+
+<h1>Must be logged in to view content.</h1>
 
 <% end %>
 

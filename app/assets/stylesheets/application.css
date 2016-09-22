@@ -115,6 +115,10 @@
   padding-top: 1.5em;
 }
 
+.extra-top-pad {
+  padding-top: 3em;
+}
+
 .side-padding {
   padding-left: 3em;
   padding-right: 3em;

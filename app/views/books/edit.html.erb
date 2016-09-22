@@ -1,23 +1,35 @@
+<div class="row" style="min-height: 30em">
+
 <% if admin_signed_in? %>
 
-  <div class="form-inputs">
-  <%= form_for [@book] do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name, value: @book.name %>
-      </br>
-    <%= f.label :body, "Summary" %>
-    <%= f.text_area :body, size: "5x5", value: @book.summary %>
-      </br>
-    <%= f.label :avatar, 'Change Picture' %>
-    <%= f.file_field :avatar %>
-      </br>
-    <%= f.submit "Update Book Info" %>
-  <% end %>
-  <%= link_to "Back to Book Index", books_path %>
+<div class="padding small-12 columns">
+
+  <div class="small-10 medium-7 small-centered">
+
+    <div class="small-12 small-centered">
+    <%= form_for [@book] do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name, value: @book.name %>
+        </br>
+      <%= f.label :body, "Summary" %>
+      <%= f.text_area :body, size: "5x5", value: @book.summary %>
+        </br>
+      <%= f.label :avatar, 'Change Picture' %>
+      <%= f.file_field :avatar %>
+        </br>
+      <%= f.submit "Update Book Info" %>
+    <% end %>
+    <%= link_to "Back to Book Index", books_path %>
+    </div>
+
   </div>
+
+</div>
 
 <% else %>
 
   <h3><%= link_to "Home", root_path %></h3>
 
 <% end %>
+
+</div>
