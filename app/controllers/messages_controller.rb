@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     if @message.save
-      MessageMailer.new_message(@message).deliver_now
+      # MessageMailer.new_message(@message).deliver_now
       flash[:notice] = "message sent."
     else
       flash[:notice] = "fields cannot be left blank."
