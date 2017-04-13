@@ -1,14 +1,42 @@
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<div class="row">
+  <div class="small-12 small-centered text-center columns">
+    <% if @books.length > 0 %>
+      <div class="autoplay no-margin">
+        <% @books.each do |book| %>
+        <div>
+          <img class="cover-image-display" src="<%= book.avatar.url %>"/>
+        </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-<div class="text-center" style="height:30em;">
-  <h1 class="extra-top-pad googlefont1">Content Coming Soon.</h1>
-
-  <div class="row small-12 small-centered columns">
-    <div class="autoplay">
-      <% @books.each do |book| %>
-      <div><img src="<%= book.avatar.url %>"/></div>
-      <% end %>
+<div class="row">
+  <div class="text-justify" style="height:30em;">
+    <div class="small-offset-1 small-10 columns">
+      <br/><br/><br/>
+      <div class="row">
+        <div class="small-12 columns">
+          <p class="googlefont2" style="text-indent: 40px; font-size: 150%;">
+            Miller Stearns Design is a full-service design firm specializing in residential and commercial interior design.   As designers, our goal is to create beautiful spaces for our clients that are timeless, original and functional.  Our attention to detail and eye for quality helps make our client's visions become a reality.
+          </p>
+        </div>
+      </div>
+      <div class="hide-for-small-only">
+        <hr>
+        <h3 class="text-center googlefont1">timeless&nbsp; ,&nbsp; original&nbsp; ,&nbsp; functional</h3>
+        <hr>
+      </div>
+      <div class="row">
+        <div class="small-12 columns">
+          <p class="googlefont2" style="text-indent: 40px; font-size: 150%;">
+            Miller Stearns has the expertise to handle projects ranging from new construction, renovation and remodels to simply updating an old space with paint and fabric.  From inception to completion, Miller Stearns is determined to create a home that reflects the true personalities of their clients.
+          </p>
+        </div>
+      </div>
+      <br/>
     </div>
   </div>
-
 </div>

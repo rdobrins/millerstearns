@@ -2,7 +2,11 @@
 
   <div class="small-10 columns small-centered text-center">
 
-    <br/><br/>
+    <br/>
+
+    <!-- <h5 class="googlefont1"><%= @page.name %></h5>
+
+    <br/> -->
 
     <div class="padding">
 
@@ -16,17 +20,7 @@
 
     </div>
 
-    <i class="fa fa-camera-retro fa-5x"></i> fa-camera-retro
-
-    <h5 class="googlefont1"><%= @page.name %></h5>
-
-    <br/><br/>
-
-    <img id="scroll-target" class="individual-image-display" src="<%= @page.avatar.url %>"/>
-
-    <br/><br/>
-
-    <h5 class="googlefont1"><%= @page.name %></h5>
+    <img class="individual-image-display" src="<%= @page.avatar.url %>"/>
 
     <div class="padding">
 
@@ -39,6 +33,8 @@
       <% end %>
 
     </div>
+
+    <br/>
 
   </div>
 

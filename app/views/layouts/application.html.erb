@@ -9,6 +9,7 @@
 
   <link rel="shortcut icon" type="image/x-icon" href="/millerstearns_tn.jpg" />
   <link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC' rel='stylesheet' type='text/css' />
+  <link href='https://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css' />
 
   <title>Miller Stearns Design</title>
 
@@ -17,84 +18,78 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-  <div class="header">
-  <a href="/">
-  <div class="breaker"></div>
-  <div class="breaker"></div>
-    <div class="small-12 small-centered columns text-center">
-      <img class="text-center padding" id="frontHeaderLogo" src="/millerstearnslogo.jpg"/>
-      <h1 class="black googlefont1">Miller&nbsp; Stearns&nbsp; Design</h1>
-    </div>
-  </a>
-  </div>
-  <div class="small-12 columns navBar googlefont1">
-    <a href="/about">
-      <div class="small-4 columns navPiece text-center">
-        <p>About<p>
-      </div>
-    </a>
-    <a href="/gallery">
-      <div class="small-4 columns navPiece text-center">
-        <p>Gallery<p>
-      </div>
-    </a>
-    <a href="/contact">
-      <div class="small-4 columns navPiece text-center">
-        <p>Contact<p>
-      </div>
-    </a>
-  </div>
-
-  <%- flash.each do |key, value| -%>
-    <div class="text-center flash flash-<%= key %>">
-      <h5 class="googlefont1"><%= value %></h5>
-    </div>
-  <%- end -%>
-
-  <br />
-
-  <%= yield %>
-
-  <br /><br /><br />
-
-  <%- flash.each do |key, value| -%>
-    <div class="text-center flash flash-<%= key %>">
-      <h5 class="googlefont1"><%= value %></h5>
-    </div>
-  <%- end -%>
-
-  <div class="small-12 columns footerBar">
-    <div class="small-3 columns footerPiece text-left googlefont1">
-      <div class="pad-top">
-        <a class="footerLinks" href="/contact">Contact</a>
-        <div class="inline text-center">
-          <p class="footerContact"><span class="googlefont1">Patrice Miller</span><br/>508 922 3460</p>
+  <div class="container">
+    <div class="header">
+      <a href="/">
+      <div class="breaker"></div>
+      <div class="breaker"></div>
+        <div class="small-12 small-centered columns text-center">
+          <img class="text-center padding" id="frontHeaderLogo" src="/millerstearnslogo.jpg"/>
+          <h1 class="black googlefont1">Miller&nbsp; Stearns&nbsp; Design</h1>
         </div>
-        <div class="inline text-center" style="padding-left:1.25em;">
-          <p class="footerContact"><span class="googlefont1">Leslie Stearns</span><br/>508 954 0588</p>
+      </a>
+    </div>
+    <div class="small-12 columns navBar googlefont1">
+      <a href="/about">
+        <div class="small-4 columns navPiece text-center">
+          <p>About<p>
         </div>
-        </p>
-      </div>
+      </a>
+      <a href="/gallery">
+        <div class="small-4 columns navPiece text-center">
+          <p>Gallery<p>
+        </div>
+      </a>
+      <a href="/contact">
+        <div class="small-4 columns navPiece text-center">
+          <p>Contact<p>
+        </div>
+      </a>
     </div>
-    <div class="small-6 columns footerPiece text-center">
+
+    <%- flash.each do |key, value| -%>
+      <div class="text-center flash flash-<%= key %>">
+        <h5 class="googlefont1"><%= value %></h5>
+      </div>
+    <%- end -%>
+
+    <br />
+
+    <%= yield %>
+
+    <br />
+
+    <div class="small-12 columns footerBar">
+      <div class="small-3 columns footerPiece text-left googlefont1">
+        <div class="pad-top">
+          <a class="footerLinks" href="/contact">Contact</a>
+          <div class="inline text-center">
+            <p class="footerContact"><span class="googlefont1">Patrice Miller</span><br/>508 922 3460</p>
+          </div>
+          <div class="inline text-center" style="padding-left:1.25em;">
+            <p class="footerContact"><span class="googlefont1">Leslie Stearns</span><br/>508 954 0588</p>
+          </div>
+          </p>
+        </div>
+      </div>
+      <div class="small-6 columns footerPiece text-center">
+        <div class="pad-top">
+          <img class="text-center" id="footerLogo" src="/millerstearnslogo.jpg"/>
+          <p class="googlefont1" style="font-size:.6em;">Miller&nbsp; Stearns&nbsp; Design</p>
+        </div>
+      </div>
+      <div class="small-3 columns footerPiece text-right googlefont1">
       <div class="pad-top">
-        <img class="text-center" id="footerLogo" src="/millerstearnslogo.jpg"/>
-        <p class="googlefont1" style="font-size:.6em;">Miller&nbsp; Stearns&nbsp; Design</p>
+        <% if admin_signed_in? %>
+          <%= link_to "Admin", books_path, class: 'footerAdmin' %><br/>
+          <%= link_to 'Sign Out', destroy_admin_session_path, method: :delete, class: 'footerAdmin' %>
+        <% else %>
+          <%= link_to 'Sign In', new_admin_session_path, class: 'footerAdmin' %>
+        <% end %>
       </div>
-    </div>
-    <div class="small-3 columns footerPiece text-right googlefont1">
-    <div class="pad-top">
-      <% if admin_signed_in? %>
-        <%= link_to "Admin", books_path, class: 'footerAdmin' %><br/>
-        <%= link_to 'Sign Out', destroy_admin_session_path, method: :delete, class: 'footerAdmin' %>
-      <% else %>
-        <%= link_to 'Sign In', new_admin_session_path, class: 'footerAdmin' %>
-      <% end %>
-    </div>
+      </div>
     </div>
   </div>
-
 
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <script type="text/javascript" src="slick/slick.min.js"></script>

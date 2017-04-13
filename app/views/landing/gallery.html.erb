@@ -1,14 +1,15 @@
-<div class="row text-center gallery-container small-12 columns">
+<div class="row">
+<div class="text-center gallery-container small-12 columns">
 
   <% if @books.length > 0 %>
 
     <% @books.each do |book| %>
 
-      <br/><br/>
+      <div class="row">
 
-      <h2 class="book-title"><%= book.name %></h2>
+      <h1 class="text-center book-title googlefont1"><%= book.name %></h1>
 
-      <br/>
+      <div class="small-offset-1 small-10">
 
       <% book.pages.each do |page| %>
 
@@ -20,6 +21,12 @@
 
       <% end %>
 
+      </div>
+
+      </div>
+
+      <br/>
+
     <% end %>
 
   <% else %>
@@ -28,4 +35,5 @@
 
   <% end %>
 
+</div>
 </div>
